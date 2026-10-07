@@ -1,0 +1,64 @@
+max_score: 100
+thresholds:
+  confirmed: 80
+  likely: 45
+  possible: 15
+
+rules:
+  - name: paid_partnership
+    evidence_type: platform_paid_partnership_label
+    weight: 100
+    source: platform
+    patterns:
+      - "\\bpaid[ -]?partnership\\b"
+      - "\\bpromotional content\\b"
+  - name: earns_commission
+    evidence_type: creator_earns_commission
+    weight: 100
+    source: platform
+    patterns:
+      - "\\bcreator earns commission\\b"
+      - "\\bcommission eligible\\b"
+  - name: sponsored_hashtag
+    evidence_type: sponsored_hashtag
+    weight: 80
+    patterns:
+      - "(?:^|\\s)#ad(?:\\s|$|[,.!?])"
+      - "(?:^|\\s)#sponsored(?:\\s|$|[,.!?])"
+      - "(?:^|\\s)#paidpartner(?:ship)?(?:\\s|$|[,.!?])"
+  - name: affiliate
+    evidence_type: affiliate_link_language
+    weight: 75
+    patterns:
+      - "(?:^|\\s)#affiliate(?:\\s|$|[,.!?])"
+      - "\\baffiliate link\\b"
+      - "\\bearns? (?:a )?commission\\b"
+  - name: discount_code
+    evidence_type: discount_code
+    weight: 45
+    patterns:
+      - "\\buse (?:my )?code [A-Z0-9_-]{3,20}\\b"
+      - "\\b(?:discount|promo|coupon) code\\b"
+      - "\\b[A-Z0-9_-]{3,15} for \\d{1,2}% off\\b"
+  - name: purchase_cta
+    evidence_type: purchase_cta
+    weight: 25
+    patterns:
+      - "\\b(?:buy|shop|order) now\\b"
+      - "\\bget yours\\b"
+      - "\\blink in (?:my )?bio\\b"
+      - "\\bavailable (?:at|on)\\b"
+  - name: gifted
+    evidence_type: gifted_language
+    weight: 20
+    patterns:
+      - "\\bgifted(?: by)?\\b"
+      - "\\bthanks? .{1,40} for sending\\b"
+      - "\\bpr package\\b"
+  - name: brand_collaboration
+    evidence_type: brand_mention
+    weight: 15
+    patterns:
+      - "\\bbrand (?:partner|collaboration)\\b"
+      - "\\bin partnership with\\b"
+      - "\\bcollab(?:oration)? with\\b"

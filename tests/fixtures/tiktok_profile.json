@@ -1,0 +1,13 @@
+{
+  "username": "fixturecreator",
+  "profile_url": "https://www.tiktok.com/@fixturecreator",
+  "creator_id": "creator-1",
+  "display_name": "Fixture Creator",
+  "bio": "Synthetic offline fixture — never presented as live TikTok data",
+  "follower_count": 50000,
+  "following_count": 120,
+  "video_count": 12,
+  "avatar_url": null,
+  "provider": "fixture",
+  "fetched_at": "2026-01-01T00:00:00Z"
+}

@@ -1,0 +1,4 @@
+[
+  {"scene_id": 1, "start_time": 0.0, "end_time": 1.75, "duration": 1.75, "keyframes": [], "scene_role": "hook", "product_visible": false},
+  {"scene_id": 2, "start_time": 1.75, "end_time": 3.5, "duration": 1.75, "keyframes": [], "scene_role": "result", "product_visible": true}
+]

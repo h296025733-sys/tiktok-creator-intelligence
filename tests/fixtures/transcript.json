@@ -1,0 +1,10 @@
+{
+  "video_id": "fixture-video",
+  "text": "I thought this was impossible. Here is the result.",
+  "segments": [
+    {"start": 0.0, "end": 1.8, "text": "I thought this was impossible."},
+    {"start": 1.8, "end": 3.5, "text": "Here is the result."}
+  ],
+  "audio_sha256": "fixture-sha256",
+  "model": "fixture"
+}

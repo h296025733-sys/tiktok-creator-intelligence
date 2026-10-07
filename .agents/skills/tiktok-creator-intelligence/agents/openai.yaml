@@ -1,0 +1,4 @@
+interface:
+  display_name: "TikTok Creator Intelligence"
+  short_description: "Score creator-product fit and reverse-engineer top ads"
+  default_prompt: "Use $tiktok-creator-intelligence to analyze this TikTok creator, compare them with my product, and turn their strongest ad patterns into a script negotiation brief."

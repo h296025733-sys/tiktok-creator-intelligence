@@ -1,0 +1,4 @@
+interface:
+  display_name: "TikTok 达人合作分析"
+  short_description: "先给可执行拍摄方案，再评估达人合作画像、风险和分数"
+  default_prompt: "Use $tiktok-creator-intelligence 分析这个 TikTok 达人与我的产品，先用大白话告诉我应该让对方拍什么视频，再给合作画像、主要风险和匹配分。"

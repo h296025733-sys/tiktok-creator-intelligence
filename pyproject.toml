@@ -1,0 +1,44 @@
+[build-system]
+requires = ["hatchling>=1.27"]
+build-backend = "hatchling.build"
+
+[project]
+name = "tiktok-creator-intelligence"
+version = "0.2.1"
+description = "Deterministic-first TikTok creator commercial content intelligence CLI and Codex skill"
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "MIT" }
+authors = [{ name = "Creator Intelligence Contributors" }]
+dependencies = [
+  "httpx>=0.28,<1",
+  "imageio-ffmpeg>=0.6,<1",
+  "openai>=2.54,<3",
+  "pydantic>=2.13,<3",
+  "PyYAML>=6.0,<7",
+  "scenedetect>=0.7,<0.8",
+  "tenacity>=9.1,<10",
+  "typer>=0.27,<1",
+  "yt-dlp>=2026.7.4",
+]
+
+[project.optional-dependencies]
+tiktok-api = ["TikTokApi>=7,<8", "playwright>=1.54,<2"]
+dev = ["pytest>=9.1,<10", "pytest-cov>=7.1,<8"]
+
+[project.scripts]
+creator-intel = "creator_intel.cli:app"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/creator_intel"]
+
+[tool.pytest.ini_options]
+addopts = "-ra"
+testpaths = ["tests"]
+markers = [
+  "integration: calls live external services and is skipped by default",
+]
+
+[tool.coverage.run]
+source = ["creator_intel"]
+branch = true
